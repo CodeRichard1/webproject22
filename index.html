@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <navbar id="navbar">
+        <a href="index.html"><button class="button">Main Page</button></a></text><a href="tutorial.html"><button class="button">Tutorial</button></a><a href="portfolio.html"><button class="button">Portfolio</button></a>
+    </navbar>
+    <p class="important-text">This is my website project about photography.</p><p>It has a small tutorial on the basics and a portfolio of some of my and a fellow photographer's photographs</p>
+<!-- ######################SLIDESHOW CODE################## -->
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/1/iceland.jpg" style="width:100%">
+      <div class="text">Hvítá river, Húsafell, Iceland.</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/1/robin.jpg" style="width:100%">
+      <div class="text">Robin - RSPB Leighton Moss</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/1/ostend.jpg" style="width:100%">
+      <div class="text">The Dancing Waves - Ostend</div>
+    </div>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+    </script>
+    <!-- #####################END OF SLIDESHOW CODE####################### -->
+
+</body>
+</html>
